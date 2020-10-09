@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+<<<<<<< HEAD
 void telaProjeto(void);
 void menuPrincipal(void);
 void cadTarefa(void);
@@ -28,6 +29,16 @@ int main(void){
 }
 
 void telaProjeto(void){
+=======
+void menuProjeto(void);
+
+int main(void){
+    menuProjeto();
+	return 0;
+}
+
+void menuProjeto(void){
+>>>>>>> bcc7f31950a514fad0af1c4e0c57c96f7fb2e110
     printf("\n");
     printf("===================================================================\n\n");
     printf("           Universidade Federal do Rio Grande do Norte         \n");
