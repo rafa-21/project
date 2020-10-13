@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void telaProjeto(void);
 void menuPrincipal(void);
@@ -9,9 +10,11 @@ void verComp(void);
 int main(void){
     int opc;
     telaProjeto();
+    system("cls");
     menuPrincipal();
     printf("Escolha uma opção: ");
     scanf("%d", &opc);
+    system("cls");
     switch (opc){
         case 1:
             cadTarefa();
@@ -20,22 +23,14 @@ int main(void){
             verComp();
             break;
         default:
-            printf("Escolha uma alternativa válida. ");
-            
+            printf("Escolha uma alternativa válida. ");     
     }
 
 	return 0;
 }
 
 void telaProjeto(void){
-void menuProjeto(void);
-
-int main(void){
-    menuProjeto();
-	return 0;
-}
-
-void menuProjeto(void){
+    char press;
     printf("\n");
     printf("===================================================================\n\n");
     printf("           Universidade Federal do Rio Grande do Norte         \n");
@@ -49,6 +44,8 @@ void menuProjeto(void){
     printf("===================================================================\n\n");
     printf("As diversas atribuições que atualmente as pessoas possuem no seu dia a dia exigem, muitas vezes, o registro dos seus compromissos, seja através de agendas analógicas(papel) ou digitais(software e aplicativos). Uma agenda de tarefas é um programa de anotações de tarefas e compromissos do quais o usuário deseja ser lembrado. O presente projeto tem como objetivo desenvolver um programa de computador que realize o agendamento de tarefas, de forma eficiente, fornecendo lembretes aos usuários sobre compromissos agendados.\n\n");
     printf("===================================================================\n\n");
+    printf("Pressione qualquer tecla para continuar.");
+    scanf("%c", &press);
 }
 
 void menuPrincipal(void){
@@ -60,9 +57,15 @@ void menuPrincipal(void){
 }
 
 void cadTarefa(void){
-    printf("Tela de cadastro.");
+    char press;
+    printf("Tela de cadastro.\n\n");
+    printf("Pressione qualquer tecla para continuar.");
+    scanf("%c", &press);
 }
 
 void verComp(void){
-    printf("Tela de comprimissos.");
+    char press;
+    printf("Tela de comprimissos.\n\n");
+    printf("Pressione qualquer tecla para continuar.");
+    scanf("%c", &press);
 }
