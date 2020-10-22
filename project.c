@@ -2,29 +2,30 @@
 #include <stdlib.h>
 
 void telaProjeto(void);
-void menuPrincipal(void);
+char menuPrincipal(void);
 void cadTarefa(void);
 void verComp(void);
 
 
 int main(void){
-    int opc;
+    char opc;
     telaProjeto();
     system("cls");
-    menuPrincipal();
-    printf("Escolha uma opção: ");
-    scanf("%d", &opc);
+    do {
+        opc = menuPrincipal();
+        printf("Escolha uma opção: ");
+        scanf("%c", &opc);
+        system("cls");
+        switch (opc){
+            case 1:
+                cadTarefa();
+                break;
+            case 2:
+                verComp();
+                break;
+        }     
+    } while (opc != '0'); 
     system("cls");
-    switch (opc){
-        case 1:
-            cadTarefa();
-            break;
-        case 2:
-            verComp();
-            break;
-        default:
-            printf("Escolha uma alternativa válida. ");     
-    }
 
 	return 0;
 }
@@ -48,11 +49,12 @@ void telaProjeto(void){
     scanf("%c", &press);
 }
 
-void menuPrincipal(void){
+char menuPrincipal(void){
     printf("===================================================================\n\n");
     printf("                       MENU PRINCIPAL\n\n");
     printf("                 1 - Agendar Compromissos\n");
-    printf("                   2 - Consultar Agenda\n\n");
+    printf("                   2 - Consultar Agenda\n");
+    printf("                  0 - Encerrar Programa\n\n");
     printf("===================================================================\n\n");
 }
 
