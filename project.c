@@ -3,12 +3,13 @@
 
 void telaProjeto(void);
 char menuPrincipal(void);
+char login(void);
+void funLogin(void);
 void cadUsuario(void);
 void cadTarefa(void);
 void editUsuario(void);
+void removeUsuario(void);
 void agendaUsuario(void);
-void verComp(void);
-void funcaoFim(void);
 
 
 int main(void){
@@ -17,20 +18,14 @@ int main(void){
     system("cls || clear");
     do {
         opc = menuPrincipal();
-        printf("Escolha uma opção: ");
-        scanf("%c", &opc);
-        system("cls || clear");
+        system( "cls || clear");
         switch (opc){
             case 1:
-                cadUsuario();
+                login();
                 break;
             case 2:
-                editUsuario();
+                cadUsuario();
                 break;
-            case 3:
-                agendaUsuario();
-                break;
-            
         }     
     } while (opc != '0'); 
     system("cls || clear");
@@ -59,48 +54,77 @@ void telaProjeto(void){
 }
 
 char menuPrincipal(void){
+    char opc;
     printf("===================================================================\n\n");
     printf("                       MENU PRINCIPAL\n\n");
-    printf("                   1 - Cadastrar Usuário\n");
-    printf("                   2 - Editar Dados de Usuário\n");
-    printf("                   3 - Consultar Agenda de Usuário\n");
+    printf("                   1 - Login\n");
+    printf("                   2 - Cadastrar Usuário\n");
     printf("                   0 - Encerrar Programa\n\n");
+    printf("Escolha uma opção: ");
+    scanf("%c", &opc);
     printf("===================================================================\n\n");
+    getchar();
+    return opc;
+
+}
+
+char login(void){
+    char opc;
+    printf("1 - Agendar novo compromisso\n");
+    printf("2 - Consultar agendamentos\n");
+    printf("3 - Editar dados de usuário\n");
+    printf("4 - Remover usuário\n");
+    printf("0 - Retornar ao menu anterior\n\n");
+    printf("Escolha uma opção: ");
+    scanf("%c", &opc);
+    getchar();
+    return opc; 
+
+}
+
+void funLogin(void){
+    char opcao;
+    do{
+        opcao = login();
+        switch (opcao){
+            case 1:
+                cadTarefa();
+                break;
+            case 2:
+                agendaUsuario();
+                break;
+            case 3:
+                editUsuario();
+                break;
+            case 4: 
+                removeUsuario();
+                break;
+            
+
+
+        }
+    } while (opcao != '0');
 }
 
 void cadUsuario(void){
     printf("Tela de cadastro de usuário.\n\n");
-    funcaoFim();
 }
 
 void editUsuario(void){
     printf("Tela de edição de usuário.\n\n");
-    funcaoFim();
+}
+
+void removeUsuario(void){
+    printf("Tela de remoção de usuário.\n\n");
 }
 
 void agendaUsuario(void){
     printf("Tela de consulta de compromissos.\n\n");
-    funcaoFim();
 }
 
-void verComp(void){
-    printf("Tela de comprimissos.\n\n");
-    funcaoFim();
+void cadTarefa(void){
+    printf("Tela de cadastro de tarefas.\n\n");
 }
 
-void funcaoFim(void){
-    char opc;
-    printf("1 - Voltar para o menu principal\n");
-    printf("0 - Encerrar programa\n\n");
-    printf("Que ação deseja realizar agora?");
-    scanf("%c", &opc);
-    switch (opc){
-        case 1:
-            main();
-        case 0: 
-            system("cls || clear");
-            printf("Programa Encerrado.");
-    }
 
 
-}
